@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lista de Compras</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+    <h1><%= title %></h1>
+    <p>Preencha os dados abaixo para editar.</p>
+    <form action="/edit" method="POST">
+        <p>
+            <label>ID: <input type="number" name="id" value="<%= id %>" /></label>
+        </p>
+        <p>
+            <label>Nome: <input type="text" name="nome" value="<%= nome %>" /></label>
+        </p>
+        <p>
+            <label>Quantidade: <input type="text" name="quantidade" value="<% quantidade %>" /></ label>
+        </p>
+        <p>
+            <a href="/">Cancelar </a> | <input type="submit" value="Salvar" />
+        </p>
+    </form>
+</body>
+
+</html>

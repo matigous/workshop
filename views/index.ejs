@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Lista Alimentos</title>
+  <link rel='stylesheet' href="/stylesheets/bootstrap.min.css" />
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <h1>Lista de Alimentos</h1>
+  <p>Disponiveis:</p>
+  <table class="tabela">
+    <thead>
+      <tr style=" background-color: #CCC">
+        <td style="width:10%">Id</td>
+        <td style="width:55%">Nome</td>
+        <td style="width:15%"">Qtd.</td>
+        <td style=" width: 10%">Edit</td>
+        <td style=" width: 10%">Delete</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% if (data) { %>
+      <% for(var i = 0; i < data.length; i++) { %>
+      <tr>
+        <td><%= data[i].id %></td>
+        <td><%= data[i].nome %></td>
+        <td><%= data[i].quantidade %></td>
+        <td><a class="btn btn-success edit" href="edit/<%=data[i].id%>">Edit</a></td>
+        <td><a class="btn btn-danger delete" href="delete/<%=data[i].id%>">Delete</a></td>
+      </tr>
+      <% } %>
+      <% } %>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="3">
+          <br />
+          <a class="btn btn-success new" href="/new">Cadastrar Novo</a>
+        </td>
+    </tfoot>
+  </table>
+  <script href="public\javascripts\bootstrap.min.js"></script>
+</body>
+
+</html>
